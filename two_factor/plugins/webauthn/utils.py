@@ -44,6 +44,7 @@ def make_credential_creation_options(user, rp, excluded_credential_ids, challeng
         challenge=challenge,
         attestation=AttestationConveyancePreference(settings.TWO_FACTOR_WEBAUTHN_ATTESTATION_CONVEYANCE),
         authenticator_selection=AuthenticatorSelectionCriteria(
+            resident_key='preferred',
             authenticator_attachment=authenticator_attachment,
             user_verification=UserVerificationRequirement(settings.TWO_FACTOR_WEBAUTHN_UV_REQUIREMENT)
         ),
